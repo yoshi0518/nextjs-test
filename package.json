@@ -1,0 +1,14 @@
+{
+  "name": "nextjs-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "pnpm -F \"app_*\" lint",
+    "fmt": "pnpm -F \"app_*\" fmt",
+    "app_xx": "pnpm -F \"app_xx\""
+  },
+  "keywords": [],
+  "author": "yoshi0518",
+  "license": "ISC"
+}
