@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "pnpm -F \"app_*\" lint",
     "fmt": "pnpm -F \"app_*\" fmt",
-    "app_xx": "pnpm -F \"app_xx\""
+    "app_xx": "pnpm -F \"app_xx\"",
+    "app_01": "pnpm -F \"app_01\""
   },
   "keywords": [],
   "author": "yoshi0518",
