@@ -7,7 +7,8 @@
     "lint": "pnpm -F \"app_*\" lint",
     "fmt": "pnpm -F \"app_*\" fmt",
     "app_xx": "pnpm -F \"app_xx\"",
-    "app_01": "pnpm -F \"app_01\""
+    "app_01": "pnpm -F \"app_01\"",
+    "app_02": "pnpm -F \"app_02\""
   },
   "keywords": [],
   "author": "yoshi0518",
