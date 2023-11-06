@@ -1,5 +1,12 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'next/core-web-vitals', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'next/core-web-vitals',
+    'prettier',
+    'plugin:import/recommended',
+    'plugin:import/warnings',
+  ],
   overrides: [
     {
       files: ['*.stories.tsx', 'src/pages/**/*'],
@@ -14,8 +21,9 @@ module.exports = {
       },
     },
   ],
-  plugins: ['import', 'unused-imports'],
+  plugins: ['import'],
   rules: {
+    'import/no-unresolved': 'off',
     'import/order': [
       'error',
       {
@@ -23,7 +31,10 @@ module.exports = {
         'newlines-between': 'always',
         pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: { order: 'asc', caseInsensitive: true },
-        pathGroups: [{ pattern: '@/components/**', group: 'internal', position: 'before' }],
+        pathGroups: [
+          { pattern: '@/components/**', group: 'internal', position: 'before' },
+          { pattern: './**/*.css', group: 'index', position: 'before' },
+        ],
       },
     ],
   },
