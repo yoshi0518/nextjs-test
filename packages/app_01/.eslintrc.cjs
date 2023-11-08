@@ -14,6 +14,11 @@ module.exports = {
       },
     },
   ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   plugins: ['import', 'unused-imports'],
   rules: {
     'import/order': [
