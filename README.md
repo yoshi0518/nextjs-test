@@ -9,3 +9,4 @@
 | packages/app_02 | Layout、Page、Dynamic Route、Error、Suspense、NotFound |
 | packages/app_03 | Image                                                  |
 | packages/app_04 | API Routes                                             |
+| packages/app_05 | Server Actions                                         |

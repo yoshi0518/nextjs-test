@@ -3,6 +3,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'next/core-web-vitals',
+    'plugin:@next/next/recommended',
     'prettier',
     'plugin:import/recommended',
     'plugin:import/warnings',
