@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <main>
-      <h1>app_xx</h1>
-    </main>
-  );
-}
+import Home from '@/components/page';
+
+const Page = () => <Home />;
+
+export default Page;
