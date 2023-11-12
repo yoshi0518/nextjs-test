@@ -11,3 +11,4 @@
 | packages/app_04 | API Routes                                             |
 | packages/app_05 | Server Actions                                         |
 | packages/app_06 | Storybook                                              |
+| packages/app_07 | Auth.js                                                |
