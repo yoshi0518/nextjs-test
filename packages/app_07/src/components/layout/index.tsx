@@ -1,8 +1,9 @@
 import { Noto_Sans_JP } from 'next/font/google';
 
-import NextAuthProvider from '@/libs/NextAuth';
+import NextAuthProvider from '@/libs/auth/NextAuthProvider';
 
 import type { Metadata } from 'next';
+
 
 import './globals.css';
 
