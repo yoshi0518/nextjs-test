@@ -12,3 +12,4 @@
 | packages/app_05 | Server Actions                                         |
 | packages/app_06 | Storybook                                              |
 | packages/app_07 | Auth.js                                                |
+| packages/app_08 | Zustand                                                |

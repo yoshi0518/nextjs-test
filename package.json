@@ -13,7 +13,8 @@
     "app_04": "pnpm -F \"app_04\"",
     "app_05": "pnpm -F \"app_05\"",
     "app_06": "pnpm -F \"app_06\"",
-    "app_07": "pnpm -F \"app_07\""
+    "app_07": "pnpm -F \"app_07\"",
+    "app_08": "pnpm -F \"app_08\""
   },
   "keywords": [],
   "author": "yoshi0518",
