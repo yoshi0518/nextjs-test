@@ -3,7 +3,6 @@ import prisma from '@/lib/prisma';
 import { addTodo, deleteTodo } from './action';
 import DoneTodo from './DoneTodo';
 
-
 const Page = async () => {
   const todos = await prisma.todo.findMany();
 

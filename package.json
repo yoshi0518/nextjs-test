@@ -14,9 +14,14 @@
     "app_05": "pnpm -F \"app_05\"",
     "app_06": "pnpm -F \"app_06\"",
     "app_07": "pnpm -F \"app_07\"",
-    "app_08": "pnpm -F \"app_08\""
+    "app_08": "pnpm -F \"app_08\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "yoshi0518",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^15.1.0"
+  }
 }
