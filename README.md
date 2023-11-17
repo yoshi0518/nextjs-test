@@ -13,3 +13,5 @@
 | packages/app_06 | Storybook                                              |
 | packages/app_07 | Auth.js                                                |
 | packages/app_08 | Zustand                                                |
+| packages/app_09 | TanStack Query                                         |
+| packages/app_10 | useSWR                                                 |
