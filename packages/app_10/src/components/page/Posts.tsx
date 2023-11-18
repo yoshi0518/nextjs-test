@@ -5,15 +5,22 @@ import Link from 'next/link';
 import usePostReads from '@/hooks/fetch/posts/usePostReads';
 
 const Posts = () => {
-  const { data: posts, isLoading, isError } = usePostReads();
+  const { data: response, error, isLoading, isError } = usePostReads();
+
+  console.log({
+    response,
+    error,
+    isLoading,
+    isError,
+  });
+
+  if (isError) return <div>Error: {error.message}</div>;
 
   if (isLoading) return <div>Loading ...</div>;
 
-  if (isError) return <div>Error</div>;
-
   return (
     <ul>
-      {posts?.map((post) => (
+      {response?.data.map((post) => (
         <li key={post.id}>
           <Link href={`/posts/${post.id}`}>{`ID：${post.id} Title：${post.title}`}</Link>
         </li>

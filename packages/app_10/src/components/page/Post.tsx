@@ -3,20 +3,18 @@
 import usePostRead from '@/hooks/fetch/posts/usePostRead';
 
 const Post = ({ id }: { id: string }) => {
-  const { data: post, isLoading, isError } = usePostRead(id);
+  const { data: response, error, isLoading, isError } = usePostRead(id);
+
+  if (isError) return <div>Error: {error.message}</div>;
 
   if (isLoading) return <div>Loading ...</div>;
 
-  if (isError) return <div>Error</div>;
-
-  if (!post) return <div>Not Found</div>;
-
   return (
     <>
-      <div>ID：{post.id}</div>
-      <div>UserId：{post.userId}</div>
-      <div>Title：{post.title}</div>
-      <div>Body：{post.body}</div>
+      <div>ID：{response?.data.id}</div>
+      <div>UserId：{response?.data.userId}</div>
+      <div>Title：{response?.data.title}</div>
+      <div>Body：{response?.data.body}</div>
     </>
   );
 };
