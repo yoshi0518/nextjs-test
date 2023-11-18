@@ -3,22 +3,20 @@
 import useUserRead from '@/hooks/fetch/users/useUserRead';
 
 const User = ({ id }: { id: string }) => {
-  const { data: user, isLoading, isError } = useUserRead(id);
+  const { data: response, error, isLoading, isError } = useUserRead(id);
+
+  if (isError) return <div>Error: {error.message}</div>;
 
   if (isLoading) return <div>Loading ...</div>;
 
-  if (isError) return <div>Error</div>;
-
-  if (!user) return <div>Not Found</div>;
-
   return (
     <>
-      <div>ID：{user.id}</div>
-      <div>Name：{user.name}</div>
-      <div>Username：{user.username}</div>
-      <div>Email：{user.email}</div>
-      <div>Phone：{user.phone}</div>
-      <div>Web：{user.website}</div>
+      <div>ID：{response?.data.id}</div>
+      <div>Name：{response?.data.name}</div>
+      <div>Username：{response?.data.username}</div>
+      <div>Email：{response?.data.email}</div>
+      <div>Phone：{response?.data.phone}</div>
+      <div>Web：{response?.data.website}</div>
     </>
   );
 };

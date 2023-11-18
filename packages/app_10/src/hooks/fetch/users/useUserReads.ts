@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import useSWR from 'swr';
 
 import type { User } from '@/types';
@@ -6,8 +6,15 @@ import type { User } from '@/types';
 const cacheKey = ['users', 'list'];
 
 const getUsers = async () => {
-  const response = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
-  return response.data;
+  console.log('getUsers');
+  try {
+    const { data, headers, status } = await axios.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return { data, headers, status };
+  } catch (e: unknown) {
+    if (isAxiosError(e) && e.response) {
+      throw new Error(e.message);
+    }
+  }
 };
 
 const useUserReads = () => {
@@ -15,6 +22,7 @@ const useUserReads = () => {
 
   return {
     data,
+    error,
     reload: () => mutate(),
     isLoading: !error && !data,
     isError: !!error,

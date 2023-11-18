@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { isAxiosError } from 'axios';
 import useSWR from 'swr';
 
 import type { Post } from '@/types';
@@ -6,8 +6,15 @@ import type { Post } from '@/types';
 const cacheKey = ['posts', 'detail'];
 
 const getPost = async (id: string) => {
-  const response = await axios.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
-  return response.data;
+  console.log('getPost');
+  try {
+    const { data, headers, status } = await axios.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    return { data, headers, status };
+  } catch (e: unknown) {
+    if (isAxiosError(e) && e.response) {
+      throw new Error(e.message);
+    }
+  }
 };
 
 const usePostRead = (id: string) => {
@@ -15,6 +22,7 @@ const usePostRead = (id: string) => {
 
   return {
     data,
+    error,
     reload: () => mutate(),
     isLoading: !error && !data,
     isError: !!error,
